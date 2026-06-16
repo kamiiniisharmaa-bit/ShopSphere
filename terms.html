@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>ShopSphere | Terms and Conditions</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fbfdff;
+            color: #1a1f2e;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* Header */
+        .header {
+            background: #ffffff;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.03);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 18px 0;
+            gap: 16px;
+        }
+
+        .logo h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #0f2b3d, #2c5a7a, #1e4a6e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+        }
+        .logo span {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #5c6f87;
+        }
+        .logo a {
+            text-decoration: none;
+        }
+
+        .search-bar {
+            flex: 1;
+            max-width: 380px;
+            margin: 0 20px;
+        }
+        .search-bar form {
+            display: flex;
+            background: #f2f4f8;
+            border-radius: 50px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+        .search-bar input {
+            flex: 1;
+            border: none;
+            padding: 12px 20px;
+            font-size: 0.9rem;
+            background: transparent;
+            outline: none;
+        }
+        .search-bar button {
+            background: white;
+            border: none;
+            padding: 0 24px;
+            cursor: pointer;
+            color: #1e4a6e;
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 26px;
+            align-items: center;
+        }
+        .nav-icons a {
+            color: #2c3e50;
+            font-size: 1.3rem;
+            text-decoration: none;
+            transition: 0.2s;
+            position: relative;
+        }
+        .nav-icons a:hover {
+            color: #e67e22;
+        }
+        .cart-badge {
+            font-size: 0.7rem;
+            background: #e67e22;
+            color: white;
+            border-radius: 30px;
+            padding: 2px 6px;
+            position: absolute;
+            top: -8px;
+            right: -12px;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            margin: 24px 0 20px;
+            font-size: 0.85rem;
+            color: #5c6f87;
+        }
+        .breadcrumb a {
+            color: #e67e22;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* Terms Container */
+        .terms-container {
+            background: white;
+            border-radius: 32px;
+            padding: 48px 56px;
+            margin: 20px 0 60px;
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.02);
+            border: 1px solid #edf2f9;
+        }
+        .terms-header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #eef2fa;
+            padding-bottom: 28px;
+        }
+        .terms-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #0f2b3d, #2c5a7a);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .last-updated {
+            color: #6c7f96;
+            margin-top: 10px;
+            font-size: 0.85rem;
+        }
+        .legal-intro {
+            background: #f9fbfe;
+            padding: 20px 28px;
+            border-radius: 24px;
+            margin-bottom: 36px;
+            line-height: 1.6;
+        }
+        .toc {
+            background: #f9fbfe;
+            padding: 24px 32px;
+            border-radius: 28px;
+            margin-bottom: 40px;
+        }
+        .toc h3 {
+            font-size: 1.2rem;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .toc ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 32px;
+            list-style: none;
+        }
+        .toc li a {
+            color: #1e4a6e;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        .toc li a:hover {
+            color: #e67e22;
+            text-decoration: underline;
+        }
+        .terms-section {
+            margin-bottom: 48px;
+            scroll-margin-top: 100px;
+        }
+        .terms-section h2 {
+            font-size: 1.7rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #0f2b3d;
+            border-left: 5px solid #e67e22;
+            padding-left: 20px;
+        }
+        .terms-section h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 24px 0 12px;
+            color: #2c3e50;
+        }
+        .terms-section p {
+            line-height: 1.7;
+            margin-bottom: 16px;
+            color: #2d3e55;
+        }
+        .terms-section ul, .terms-section ol {
+            margin: 12px 0 20px 28px;
+            line-height: 1.7;
+            color: #2d3e55;
+        }
+        .terms-section li {
+            margin-bottom: 8px;
+        }
+        .highlight-box {
+            background: #fef7e8;
+            padding: 20px;
+            border-radius: 20px;
+            margin: 24px 0;
+            border-left: 4px solid #e67e22;
+        }
+        .contact-card {
+            background: #f0f6fe;
+            border-radius: 24px;
+            padding: 28px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        hr {
+            margin: 32px 0;
+            border: 0;
+            height: 1px;
+            background: #e4eaf2;
+        }
+
+        /* Footer */
+        .footer {
+            background: #0f1a24;
+            color: #cbd5e1;
+            padding: 48px 0 28px;
+            border-radius: 40px 40px 0 0;
+            margin-top: 20px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 18px;
+        }
+        .footer-col a {
+            color: #cbd5e1;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+        .footer-col a:hover {
+            color: #e67e22;
+        }
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #2d3a47;
+            padding-top: 28px;
+            font-size: 0.8rem;
+        }
+        @media (max-width: 780px) {
+            .terms-container { padding: 28px 20px; }
+            .search-bar { margin: 12px 0; order: 3; width: 100%; max-width: 100%; }
+            .container { padding: 0 20px; }
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: #1e4a6e;
+            color: white;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: 0.2s;
+            z-index: 99;
+        }
+        .back-to-top:hover {
+            background: #e67e22;
+            transform: translateY(-3px);
+        }
+        button { cursor: pointer; }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="container nav-bar">
+        <div class="logo">
+            <a href="#" onclick="goToHomepage(); return false;">
+                <h1>ShopSphere <span>🌍</span></h1>
+            </a>
+        </div>
+        <div class="search-bar">
+            <form onsubmit="event.preventDefault(); alert('🔍 Search our legal terms or explore ShopSphere.');">
+                <input type="text" placeholder="Search help, policies...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+        <div class="nav-icons">
+            <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+        </div>
+    </div>
+</header>
+
+<main class="container">
+    <div class="breadcrumb">
+        <a href="#" id="homeBreadcrumb">Home</a> &nbsp;/&nbsp; 
+        <span style="color:#e67e22; font-weight:500;">Terms & Conditions</span>
+    </div>
+
+    <div class="terms-container">
+        <div class="terms-header">
+            <h1>Terms and Conditions</h1>
+            <div class="last-updated">📅 Effective: June 16, 2026 | Version 2.1</div>
+            <p style="margin-top: 18px; max-width: 700px; margin-left: auto; margin-right: auto;">Welcome to ShopSphere. These Terms govern your use of our marketplace, purchases, and interactions. By accessing ShopSphere, you agree to be bound by this agreement.</p>
+        </div>
+
+        <div class="legal-intro">
+            <i class="fas fa-gavel" style="color:#e67e22; margin-right: 10px;"></i> 
+            <strong>Legal Agreement:</strong> ShopSphere operates as a global e-commerce platform connecting buyers and trusted sellers. Please read carefully — these terms affect your legal rights.
+        </div>
+
+        <div class="toc">
+            <h3><i class="fas fa-list-ul"></i> Quick Navigation</h3>
+            <ul>
+                <li><a href="#acceptance">1. Acceptance</a></li>
+                <li><a href="#accounts">2. Accounts</a></li>
+                <li><a href="#purchases">3. Purchases & Payments</a></li>
+                <li><a href="#shipping">4. Shipping & Delivery</a></li>
+                <li><a href="#returns">5. Returns & Refunds</a></li>
+                <li><a href="#seller">6. Seller Terms</a></li>
+                <li><a href="#prohibited">7. Prohibited Conduct</a></li>
+                <li><a href="#ip">8. Intellectual Property</a></li>
+                <li><a href="#liability">9. Limitation of Liability</a></li>
+                <li><a href="#dispute">10. Dispute Resolution</a></li>
+                <li><a href="#changes">11. Modifications</a></li>
+                <li><a href="#contactTerms">12. Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div id="acceptance" class="terms-section">
+            <h2>1. Acceptance of Terms</h2>
+            <p>By using the ShopSphere website, mobile app, or any related services (collectively, the "Platform"), you agree to comply with and be legally bound by these Terms and Conditions, as well as our <a href="#" id="privacyMockLink" style="color:#e67e22;">Privacy Policy</a>. If you do not agree, please discontinue use immediately. ShopSphere reserves the right to update these terms, and continued use constitutes acceptance of modifications.</p>
+        </div>
+
+        <div id="accounts" class="terms-section">
+            <h2>2. Account Registration & Responsibility</h2>
+            <p>To place orders, sell products, or access certain features, you must register for a ShopSphere account. You agree to provide accurate, current, and complete information. You are solely responsible for maintaining the confidentiality of your password and for all activities under your account. Notify us immediately of any unauthorized access. ShopSphere may suspend or terminate accounts that violate these terms or applicable laws.</p>
+            <ul>
+                <li><strong>Age requirement:</strong> You must be at least 18 years old or have parental consent.</li>
+                <li><strong>Business accounts:</strong> Sellers must provide valid tax/business information.</li>
+            </ul>
+        </div>
+
+        <div id="purchases" class="terms-section">
+            <h2>3. Purchases, Pricing & Payment</h2>
+            <p>All prices on ShopSphere are in US dollars unless noted otherwise. Taxes, shipping, and handling fees are additional and displayed at checkout. We strive for accuracy but errors may occur; if a product is mispriced, we reserve the right to cancel or refuse orders. Payments are processed via secure third-party gateways (Stripe, PayPal, ShopPay). By completing a purchase, you authorize us to charge the total amount.</p>
+            <div class="highlight-box">
+                <i class="fas fa-shield-alt"></i> <strong>Buyer Protection:</strong> Eligible purchases are covered by our ShopSphere Buyer Protection — refunds for items not received or significantly not as described.
+            </div>
+        </div>
+
+        <div id="shipping" class="terms-section">
+            <h2>4. Shipping & Delivery</h2>
+            <p>Shipping times vary based on seller location and shipping method. Estimated delivery dates are provided at checkout but are not guaranteed. Risk of loss transfers to the buyer upon delivery to the carrier. ShopSphere is not liable for delays caused by customs, weather, or carrier disruptions. For international orders, import duties are the buyer's responsibility.</p>
+        </div>
+
+        <div id="returns" class="terms-section">
+            <h2>5. Returns, Refunds & Warranty</h2>
+            <p>Most items purchased on ShopSphere may be returned within 30 days of delivery, provided they are unused and in original packaging. Certain items (e.g., intimate goods, perishables, digital products) are non-returnable. To initiate a return, visit your order history. Refunds are issued to the original payment method within 7–14 business days after the seller receives the return. Defective products are covered by a minimum 1-year warranty from the seller.</p>
+            <ul><li><strong>Note:</strong> Return shipping costs may apply unless the item is defective or the seller made an error.</li></ul>
+        </div>
+
+        <div id="seller" class="terms-section">
+            <h2>6. Seller Terms & Marketplace Role</h2>
+            <p>ShopSphere is a marketplace that connects third-party sellers with buyers. We do not manufacture, warehouse, or inspect every item. Sellers are responsible for accurate listings, fulfillment, and compliance with laws. As a seller, you agree to:</p>
+            <ul>
+                <li>Provide accurate product descriptions, pricing, and inventory.</li>
+                <li>Process orders within the stated handling time.</li>
+                <li>Comply with all applicable consumer protection laws.</li>
+                <li>Pay applicable platform fees as outlined in the Seller Agreement.</li>
+            </ul>
+            <p>ShopSphere reserves the right to remove listings or suspend sellers for policy violations.</p>
+        </div>
+
+        <div id="prohibited" class="terms-section">
+            <h2>7. Prohibited Conduct</h2>
+            <p>You agree not to misuse the Platform. Prohibited activities include:</p>
+            <ul>
+                <li>Violating any laws, regulations, or third-party rights.</li>
+                <li>Uploading malicious code, viruses, or harmful content.</li>
+                <li>Engaging in fraudulent transactions, fake reviews, or chargeback abuse.</li>
+                <li>Interfering with security features or attempting to access other accounts.</li>
+                <li>Harassing, abusing, or threatening other users.</li>
+            </ul>
+            <p>Violations may lead to immediate account termination and legal action.</p>
+        </div>
+
+        <div id="ip" class="terms-section">
+            <h2>8. Intellectual Property Rights</h2>
+            <p>All content on ShopSphere — including logos, graphics, product images, text, and software — is the property of ShopSphere or its licensors. You may not reproduce, distribute, or create derivative works without written permission. Sellers retain ownership of their product images but grant ShopSphere a license to display them. The "ShopSphere" name and logo are registered trademarks.</p>
+        </div>
+
+        <div id="liability" class="terms-section">
+            <h2>9. Disclaimer & Limitation of Liability</h2>
+            <p>ShopSphere provides the Platform "as is" and "as available." To the fullest extent permitted by law, we disclaim all warranties, including merchantability and fitness for a particular purpose. In no event shall ShopSphere, its affiliates, or employees be liable for any indirect, incidental, or consequential damages arising from your use of the Platform, even if advised of the possibility. Our total liability shall not exceed the amount you paid in the last 6 months.</p>
+        </div>
+
+        <div id="dispute" class="terms-section">
+            <h2>10. Governing Law & Dispute Resolution</h2>
+            <p>These Terms shall be governed by the laws of the State of New York, without regard to conflict of law principles. Any dispute arising from these Terms or your use of ShopSphere shall be resolved through binding arbitration in New York, NY, rather than in court, except for intellectual property claims. You waive the right to participate in class actions.</p>
+            <div class="highlight-box">
+                <i class="fas fa-balance-scale"></i> <strong>Informal Resolution:</strong> Before filing a claim, you agree to contact us at legal@shopsphere.com to attempt a resolution.
+            </div>
+        </div>
+
+        <div id="changes" class="terms-section">
+            <h2>11. Modifications to Terms</h2>
+            <p>We may update these Terms periodically to reflect changes in our practices, legal requirements, or marketplace features. The "Effective Date" at the top indicates when changes were made. Material changes will be notified via email or banner on our site. Your continued use after changes signifies acceptance.</p>
+        </div>
+
+        <div id="contactTerms" class="terms-section">
+            <h2>12. Contact Information</h2>
+            <p>If you have any questions, concerns, or feedback about these Terms or ShopSphere in general, please reach out to our Legal & Compliance Team.</p>
+            <div class="contact-card">
+                <i class="fas fa-envelope" style="font-size: 1.8rem; color:#e67e22;"></i>
+                <p style="margin: 12px 0 6px;"><strong>Email:</strong> legal@shopsphere.com</p>
+                <p><strong>Phone:</strong> +1 (888) 557-8890</p>
+                <p><strong>Address:</strong> 123 Sphere Avenue, Floor 8, New York, NY 10001, USA</p>
+            </div>
+        </div>
+
+        <hr>
+        <p style="font-size: 0.85rem; text-align: center;">By using ShopSphere, you acknowledge that you have read, understood, and agreed to these Terms and Conditions.</p>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col"><h4>ShopSphere</h4><p>Global marketplace connecting creators & shoppers.</p><p><i class="fas fa-map-pin"></i> New York, NY</p></div>
+            <div class="footer-col"><h4>Legal</h4><a href="#" id="termsFooterLink">Terms of Service</a><a href="#" id="privacyFooterLink">Privacy Policy</a><a href="#">Cookie Policy</a></div>
+            <div class="footer-col"><h4>Help</h4><a href="#">Help Center</a><a href="#">Returns Center</a><a href="#">Contact Support</a></div>
+        </div>
+        <div class="copyright">&copy; 2026 ShopSphere — Infinite choices, one sphere. All rights reserved.</div>
+    </div>
+</footer>
+
+<a href="#" class="back-to-top" id="backToTopBtn"><i class="fas fa-arrow-up"></i></a>
+
+<script>
+    function goToHomepage() {
+        alert("✨ Welcome to ShopSphere — In full experience, you'd be redirected to the homepage.");
+        window.location.href = "#";
+    }
+
+    // Breadcrumb and navigation
+    document.getElementById('homeBreadcrumb')?.addEventListener('click', (e) => { e.preventDefault(); goToHomepage(); });
+    document.getElementById('userTermsBtn')?.addEventListener('click', (e) => { e.preventDefault(); alert("🔐 ShopSphere Account: Sign in to manage orders, address & legal consents."); });
+    document.getElementById('cartTermsBtn')?.addEventListener('click', (e) => { e.preventDefault(); alert("🛒 Your cart is ready. Explore amazing products on ShopSphere."); });
+    
+    // Footer links
+    document.getElementById('termsFooterLink')?.addEventListener('click', (e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    document.getElementById('privacyFooterLink')?.addEventListener('click', (e) => { e.preventDefault(); alert("📄 View our detailed Privacy Policy: We protect your data, no third-party selling."); });
+    document.getElementById('privacyMockLink')?.addEventListener('click', (e) => { e.preventDefault(); alert("🔒 Privacy Policy available in footer — full transparency on data use."); });
+
+    // Back to top
+    const backBtn = document.getElementById('backToTopBtn');
+    if (backBtn) {
+        backBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        window.addEventListener('scroll', () => {
+            backBtn.style.opacity = window.scrollY > 400 ? '1' : '0';
+            backBtn.style.visibility = window.scrollY > 400 ? 'visible' : 'hidden';
+        });
+        backBtn.style.transition = '0.2s';
+        backBtn.style.opacity = '0';
+        backBtn.style.visibility = 'hidden';
+    }
+
+    // Smooth anchor scrolls for TOC
+    document.querySelectorAll('.toc a, .terms-section a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId && targetId !== '#') {
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    const offset = 90;
+                    const pos = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                    window.scrollTo({ top: pos - offset, behavior: 'smooth' });
+                }
+            }
+        });
+    });
+
+    console.log('ShopSphere — Terms & Conditions page ready, fully compliant and interactive.');
+</script>
+</body>
+</html>

@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>ShopSphere | Modern Global Marketplace</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fbfdff;
+            color: #1a1f2e;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* Header */
+        .header {
+            background: #ffffff;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.03), 0 1px 0 #eef2f6;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 18px 0;
+            gap: 16px;
+        }
+
+        .logo h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #0f2b3d, #2c5a7a, #1e4a6e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+        }
+        .logo span {
+            font-size: 0.9rem;
+            font-weight: 500;
+            background: none;
+            -webkit-background-clip: unset;
+            color: #5c6f87;
+        }
+
+        .search-bar {
+            flex: 1;
+            max-width: 420px;
+            margin: 0 20px;
+        }
+        .search-bar form {
+            display: flex;
+            background: #f2f4f8;
+            border-radius: 50px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            transition: 0.2s;
+        }
+        .search-bar input {
+            flex: 1;
+            border: none;
+            padding: 12px 20px;
+            font-size: 0.9rem;
+            background: transparent;
+            outline: none;
+        }
+        .search-bar button {
+            background: white;
+            border: none;
+            padding: 0 24px;
+            cursor: pointer;
+            color: #1e4a6e;
+            font-size: 1rem;
+        }
+        .search-bar button:hover {
+            background: #eef3fc;
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 26px;
+            align-items: center;
+        }
+        .nav-icons a {
+            color: #2c3e50;
+            font-size: 1.3rem;
+            text-decoration: none;
+            transition: 0.2s;
+            position: relative;
+        }
+        .nav-icons a:hover {
+            color: #e67e22;
+        }
+        .cart-badge {
+            font-size: 0.7rem;
+            background: #e67e22;
+            color: white;
+            border-radius: 30px;
+            padding: 2px 6px;
+            position: absolute;
+            top: -8px;
+            right: -12px;
+            font-weight: 700;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(105deg, #eef4fa 0%, #ffffff 100%);
+            border-radius: 40px;
+            margin: 28px 0 48px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding: 40px 48px;
+            gap: 30px;
+        }
+        .hero-content {
+            flex: 1.2;
+        }
+        .hero-content h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            color: #0f2b3d;
+        }
+        .hero-highlight {
+            color: #e67e22;
+        }
+        .hero-content p {
+            margin: 20px 0 28px;
+            color: #4a5b72;
+            font-size: 1.05rem;
+            max-width: 90%;
+        }
+        .btn-primary {
+            background: #1e4a6e;
+            color: white;
+            border: none;
+            padding: 14px 36px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.2s;
+            display: inline-block;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .btn-primary:hover {
+            background: #e67e22;
+            transform: translateY(-2px);
+        }
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+        .hero-image img {
+            max-width: 100%;
+            width: 400px;
+            border-radius: 32px;
+            box-shadow: 0 25px 35px -12px rgba(0,0,0,0.2);
+            object-fit: cover;
+        }
+
+        /* Category Section */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin: 48px 0 24px;
+        }
+        .section-title {
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: #1a2c3e;
+        }
+        .view-all {
+            color: #e67e22;
+            font-weight: 500;
+            text-decoration: none;
+        }
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 24px;
+            margin-bottom: 20px;
+        }
+        .category-card {
+            background: white;
+            text-align: center;
+            padding: 24px 12px;
+            border-radius: 32px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+            transition: all 0.25s;
+            cursor: pointer;
+            border: 1px solid #edf2f9;
+        }
+        .category-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.1);
+            border-color: #f0bc7a;
+        }
+        .category-card img {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            margin-bottom: 12px;
+        }
+        .category-card h4 {
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 30px;
+            margin: 30px 0 50px;
+        }
+        .product-card {
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+            border: 1px solid #eef2f8;
+            padding-bottom: 18px;
+        }
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 25px 35px -12px rgba(0, 0, 0, 0.12);
+            border-color: #e2eaf3;
+        }
+        .product-img {
+            width: 100%;
+            height: 240px;
+            background: #fafcff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .product-img img {
+            max-width: 100%;
+            max-height: 190px;
+            object-fit: contain;
+            transition: transform 0.2s;
+        }
+        .product-card:hover .product-img img {
+            transform: scale(1.02);
+        }
+        .product-info {
+            padding: 12px 18px 8px;
+        }
+        .product-title {
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 6px;
+        }
+        .product-price {
+            font-weight: 800;
+            color: #1e4a6e;
+            font-size: 1.25rem;
+            margin: 8px 0;
+        }
+        .rating {
+            color: #f5a623;
+            font-size: 0.8rem;
+            margin-bottom: 12px;
+        }
+        .add-to-cart {
+            background: #f0f4fa;
+            border: none;
+            width: 90%;
+            margin: 0 auto 6px;
+            display: block;
+            padding: 10px 0;
+            border-radius: 50px;
+            font-weight: 600;
+            color: #1e4a6e;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .add-to-cart:hover {
+            background: #e67e22;
+            color: white;
+        }
+
+        /* Banner */
+        .feature-banner {
+            background: linear-gradient(115deg, #e8f0f9, #dde7f2);
+            border-radius: 40px;
+            padding: 48px 40px;
+            margin: 40px 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .banner-text h3 {
+            font-size: 1.9rem;
+            font-weight: 700;
+        }
+        .banner-text p {
+            margin: 12px 0;
+            max-width: 400px;
+        }
+        .banner-img img {
+            width: 200px;
+            border-radius: 28px;
+        }
+
+        /* Newsletter */
+        .newsletter {
+            background: #0f2b3d;
+            border-radius: 40px;
+            padding: 50px 40px;
+            text-align: center;
+            color: white;
+            margin: 30px 0 50px;
+        }
+        .newsletter h3 {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+        .newsletter-form {
+            margin-top: 24px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .newsletter-form input {
+            padding: 14px 24px;
+            border-radius: 60px;
+            border: none;
+            width: 280px;
+            font-size: 0.9rem;
+            outline: none;
+        }
+        .newsletter-form button {
+            background: #e67e22;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 60px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.2s;
+            color: white;
+        }
+        .newsletter-form button:hover {
+            background: #cf711f;
+            transform: scale(1.02);
+        }
+
+        /* Footer */
+        .footer {
+            background: #0f1a24;
+            color: #cbd5e1;
+            padding: 56px 0 28px;
+            border-radius: 40px 40px 0 0;
+            margin-top: 20px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 18px;
+        }
+        .footer-col a {
+            color: #cbd5e1;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+        .footer-col a:hover {
+            color: #e67e22;
+        }
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #2d3a47;
+            padding-top: 28px;
+            font-size: 0.8rem;
+        }
+        @media (max-width: 780px) {
+            .hero-content h2 { font-size: 2rem; }
+            .search-bar { margin: 12px 0; order: 3; width: 100%; max-width: 100%; }
+            .container { padding: 0 20px; }
+        }
+        button { cursor: pointer; }
+        .toast-msg {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            background: #1e4a6e;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            z-index: 1000;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+    </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NTV0NLN2X5"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-NTV0NLN2X5');
+</script>
+
+
+</head>
+<body>
+
+<header class="header">
+    <div class="container nav-bar">
+        <div class="logo">
+            <h1>ShopSphere <span>🌍</span></h1>
+        </div>
+        <div class="search-bar">
+            <form onsubmit="event.preventDefault(); alert('🔍 Search feature: find millions of products on ShopSphere!');">
+                <input type="text" placeholder="Search for products, brands..." aria-label="Search">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+        <div class="nav-icons">
+            <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+                <span class="cart-badge" id="cartCount">0</span>
+            </a>
+        </div>
+    </div>
+</header>
+
+<main class="container">
+    <!-- Hero -->
+    <div class="hero">
+        <div class="hero-content">
+            <h2>Discover endless <span class="hero-highlight">possibilities</span><br>at ShopSphere</h2>
+            <p>Your global marketplace for premium electronics, fashion, home goods & unique finds. Free shipping on orders $50+.</p>
+            <button class="btn-primary" id="shopHeroBtn">Shop Now →</button>
+        </div>
+        <div class="hero-image">
+            <img src="https://picsum.photos/id/13/500/500" alt="ShopSphere hero" onerror="this.src='https://placehold.co/500x500?text=ShopSphere+Universe'">
+        </div>
+    </div>
+
+    <!-- Categories -->
+    <div>
+        <div class="section-header">
+            <h2 class="section-title">Shop by Category</h2>
+            <a href="#" class="view-all" id="viewAllCat">View all →</a>
+        </div>
+        <div class="categories-grid">
+            <div class="category-card"><img src="https://cdn-icons-png.flaticon.com/512/3659/3659898.png" alt="Electronics" loading="lazy" onerror="this.src='https://placehold.co/80x80?text=📱'"><h4>Electronics</h4></div>
+            <div class="category-card"><img src="https://cdn-icons-png.flaticon.com/512/1040/1040220.png" alt="Fashion" loading="lazy" onerror="this.src='https://placehold.co/80x80?text=👗'"><h4>Fashion</h4></div>
+            <div class="category-card"><img src="https://cdn-icons-png.flaticon.com/512/2569/2569970.png" alt="Home & Living" loading="lazy" onerror="this.src='https://placehold.co/80x80?text=🏠'"><h4>Home & Living</h4></div>
+            <div class="category-card"><img src="https://cdn-icons-png.flaticon.com/512/2725/2725899.png" alt="Beauty" loading="lazy" onerror="this.src='https://placehold.co/80x80?text=💄'"><h4>Beauty</h4></div>
+            <div class="category-card"><img src="https://cdn-icons-png.flaticon.com/512/2790/2790201.png" alt="Sports" loading="lazy" onerror="this.src='https://placehold.co/80x80?text=⚽'"><h4>Sports & Outdoors</h4></div>
+        </div>
+    </div>
+
+    <!-- Featured Products injected via JS -->
+    <div class="section-header">
+        <h2 class="section-title">🔥 Trending on ShopSphere</h2>
+        <a href="#" class="view-all" id="viewAllProducts">Explore more →</a>
+    </div>
+    <div class="products-grid" id="productsGrid"></div>
+
+    <!-- Feature Banner -->
+    <div class="feature-banner">
+        <div class="banner-text">
+            <h3>Sphere+ Membership</h3>
+            <p>Unlock exclusive deals, early access, and 5% cashback on every purchase. Join thousands of savvy shoppers.</p>
+            <button class="btn-primary" id="memberBtn" style="background:#e67e22;">Learn More →</button>
+        </div>
+        <div class="banner-img">
+            <img src="https://picsum.photos/id/96/300/200" alt="Membership perks" onerror="this.src='https://placehold.co/300x200?text=Sphere+Club'">
+        </div>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="newsletter">
+        <h3>Join the Sphere Community 🌟</h3>
+        <p>Get 15% off your first order + curated inspiration straight to your inbox.</p>
+        <div class="newsletter-form">
+            <input type="email" placeholder="Your email address" id="newsEmail">
+            <button id="subscribeNewsBtn">Subscribe →</button>
+        </div>
+        <small style="opacity:0.8;">No spam, just quality updates.</small>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col"><h4>ShopSphere</h4><p>Global marketplace connecting creators & shoppers.</p><p><i class="fas fa-map-pin"></i> New York, NY</p></div>
+            <div class="footer-col"><h4>Support</h4><a href="#">Help Center</a><a href="#">Returns & Exchanges</a><a href="#">Track Order</a></div>
+            <div class="footer-col"><h4>Company</h4><a href="#">About Us</a><a href="#">Sustainability</a><a href="#">Press</a></div>
+            <div class="footer-col"><h4>Follow</h4><a href="#"><i class="fab fa-instagram"></i> Instagram</a><a href="#"><i class="fab fa-twitter"></i> Twitter</a></div>
+        </div>
+        <div class="copyright">&copy; 2026 ShopSphere — Infinite choices, one sphere. All rights reserved.</div>
+    </div>
+</footer>
+
+<script>
+    // PRODUCT DATA with guaranteed working images (picsum + fallback)
+    const products = [
+        { id: 1, name: "SoniCore Wireless Headphones", price: 79.99, rating: 4.7, image: "https://picsum.photos/id/1/300/300", alt: "headphones" },
+        { id: 2, name: "AeroSmart Watch Ultra", price: 149.00, rating: 4.9, image: "https://picsum.photos/id/0/300/300", alt: "smartwatch" },
+        { id: 3, name: "Zenith Eco Hoodie", price: 54.90, rating: 4.6, image: "https://picsum.photos/id/20/300/300", alt: "hoodie" },
+        { id: 4, name: "Lumina Desk Lamp", price: 39.95, rating: 4.5, image: "https://picsum.photos/id/26/300/300", alt: "lamp" },
+        { id: 5, name: "Vanguard Backpack Pro", price: 68.99, rating: 4.8, image: "https://picsum.photos/id/133/300/300", alt: "backpack" },
+        { id: 6, name: "SphereBuds Mini", price: 45.00, rating: 4.4, image: "https://picsum.photos/id/155/300/300", alt: "earbuds" },
+        { id: 7, name: "Glow Elixir Serum", price: 32.50, rating: 4.7, image: "https://picsum.photos/id/29/300/300", alt: "serum" },
+        { id: 8, name: "Aeromat Yoga Mat", price: 49.00, rating: 4.8, image: "https://picsum.photos/id/96/300/300", alt: "yoga" }
+    ];
+
+    let cart = [];
+    const cartCountSpan = document.getElementById('cartCount');
+
+    function updateCartUI() {
+        const totalItems = cart.reduce((sum, i) => sum + i.quantity, 0);
+        cartCountSpan.innerText = totalItems;
+    }
+
+    function showToast(message) {
+        const toast = document.createElement('div');
+        toast.className = 'toast-msg';
+        toast.innerText = message;
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), 2000);
+    }
+
+    function addToCart(productId) {
+        const product = products.find(p => p.id === productId);
+        if (!product) return;
+        const existing = cart.find(item => item.id === productId);
+        if (existing) {
+            existing.quantity += 1;
+            showToast(`🛒 ${product.name} quantity updated (${existing.quantity})`);
+        } else {
+            cart.push({ id: product.id, name: product.name, price: product.price, quantity: 1 });
+            showToast(`✨ ${product.name} added to cart`);
+        }
+        updateCartUI();
+    }
+
+    function renderProducts() {
+        const grid = document.getElementById('productsGrid');
+        if (!grid) return;
+        grid.innerHTML = '';
+        products.forEach(product => {
+            const fullStars = Math.floor(product.rating);
+            const half = product.rating % 1 >= 0.5;
+            let stars = '';
+            for (let i=0; i<fullStars; i++) stars += '<i class="fas fa-star"></i>';
+            if (half) stars += '<i class="fas fa-star-half-alt"></i>';
+            const empty = 5 - fullStars - (half ? 1 : 0);
+            for (let i=0; i<empty; i++) stars += '<i class="far fa-star"></i>';
+            
+            const card = document.createElement('div');
+            card.className = 'product-card';
+            card.innerHTML = `
+                <div class="product-img">
+                    <img src="${product.image}" alt="${product.alt}" loading="lazy" onerror="this.src='https://placehold.co/300x300?text=${encodeURIComponent(product.name)}'">
+                </div>
+                <div class="product-info">
+                    <div class="product-title">${product.name}</div>
+                    <div class="product-price">$${product.price.toFixed(2)}</div>
+                    <div class="rating">${stars} ${product.rating}</div>
+                    <button class="add-to-cart" data-id="${product.id}">Add to Cart</button>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+        document.querySelectorAll('.add-to-cart').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const id = parseInt(btn.getAttribute('data-id'));
+                addToCart(id);
+            });
+        });
+    }
+
+    // Initial render
+    renderProducts();
+    updateCartUI();
+
+    // Hero button scroll to products
+    document.getElementById('shopHeroBtn')?.addEventListener('click', () => {
+        document.querySelector('.products-grid')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    // Newsletter subscription
+    document.getElementById('subscribeNewsBtn')?.addEventListener('click', () => {
+        const email = document.getElementById('newsEmail').value.trim();
+        if (!email || !email.includes('@')) {
+            alert('Please enter a valid email address.');
+            return;
+        }
+        alert(`🎉 Thanks ${email}! Your 15% off coupon is on its way. Welcome to ShopSphere.`);
+        document.getElementById('newsEmail').value = '';
+    });
+
+    // Category click demo
+    document.querySelectorAll('.category-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const cat = card.querySelector('h4')?.innerText || 'category';
+            alert(`✨ Explore ${cat} collection — amazing deals await at ShopSphere.`);
+        });
+    });
+
+    // View all product link
+    document.getElementById('viewAllProducts')?.addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('🚀 Discover our full catalog with 1,000+ trending items!');
+    });
+
+    // Member banner
+    document.getElementById('memberBtn')?.addEventListener('click', () => {
+        alert('🎁 Sphere+ Membership perks: free express delivery, early sale access, and 5% cashback. Join today!');
+    });
+
+    // Icons interactions
+    document.getElementById('userIcon')?.addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('🔐 Sign in to your ShopSphere account — manage orders, wishlist & more.');
+    });
+    document.getElementById('heartIcon')?.addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('❤️ Your wishlist is waiting — save your favorite items!');
+    });
+    document.getElementById('cartIcon')?.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (cart.length === 0) alert('🛍️ Your cart is empty. Start adding amazing products!');
+        else {
+            const items = cart.map(i => `${i.name} x${i.quantity} - $${(i.price * i.quantity).toFixed(2)}`).join('\n');
+            const total = cart.reduce((sum, i) => sum + (i.price * i.quantity), 0).toFixed(2);
+            alert(`🛒 Your Cart:\n${items}\n\nTotal: $${total}\n\nProceed to checkout? (demo)`);
+        }
+    });
+
+    // View all categories
+    document.getElementById('viewAllCat')?.addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('📱 From Electronics to Home Decor — explore all categories on ShopSphere.');
+    });
+
+    console.log('ShopSphere — fully loaded e-commerce homepage with dynamic products & images');
+</script>
+</body>
+</html>

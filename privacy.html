@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>ShopSphere | Privacy Policy — Your Data, Our Promise</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fbfdff;
+            color: #1a1f2e;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* Header */
+        .header {
+            background: #ffffff;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.03);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 18px 0;
+            gap: 16px;
+        }
+
+        .logo h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #0f2b3d, #2c5a7a, #1e4a6e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+        }
+        .logo span {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #5c6f87;
+        }
+        .logo a {
+            text-decoration: none;
+        }
+
+        .search-bar {
+            flex: 1;
+            max-width: 380px;
+            margin: 0 20px;
+        }
+        .search-bar form {
+            display: flex;
+            background: #f2f4f8;
+            border-radius: 50px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+        .search-bar input {
+            flex: 1;
+            border: none;
+            padding: 12px 20px;
+            font-size: 0.9rem;
+            background: transparent;
+            outline: none;
+        }
+        .search-bar button {
+            background: white;
+            border: none;
+            padding: 0 24px;
+            cursor: pointer;
+            color: #1e4a6e;
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 26px;
+            align-items: center;
+        }
+        .nav-icons a {
+            color: #2c3e50;
+            font-size: 1.3rem;
+            text-decoration: none;
+            transition: 0.2s;
+            position: relative;
+        }
+        .nav-icons a:hover {
+            color: #e67e22;
+        }
+        .cart-badge {
+            font-size: 0.7rem;
+            background: #e67e22;
+            color: white;
+            border-radius: 30px;
+            padding: 2px 6px;
+            position: absolute;
+            top: -8px;
+            right: -12px;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            margin: 24px 0 20px;
+            font-size: 0.85rem;
+            color: #5c6f87;
+        }
+        .breadcrumb a {
+            color: #e67e22;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* Privacy Container */
+        .privacy-container {
+            background: white;
+            border-radius: 32px;
+            padding: 48px 56px;
+            margin: 20px 0 60px;
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.02);
+            border: 1px solid #edf2f9;
+        }
+        .privacy-header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #eef2fa;
+            padding-bottom: 28px;
+        }
+        .privacy-header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #0f2b3d, #2c5a7a);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .last-updated {
+            color: #6c7f96;
+            margin-top: 10px;
+            font-size: 0.85rem;
+        }
+        .privacy-badge {
+            background: #fef7e8;
+            padding: 18px 24px;
+            border-radius: 24px;
+            margin-bottom: 36px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            border-left: 4px solid #e67e22;
+        }
+        .toc {
+            background: #f9fbfe;
+            padding: 24px 32px;
+            border-radius: 28px;
+            margin-bottom: 40px;
+        }
+        .toc h3 {
+            font-size: 1.2rem;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .toc ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 32px;
+            list-style: none;
+        }
+        .toc li a {
+            color: #1e4a6e;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        .toc li a:hover {
+            color: #e67e22;
+            text-decoration: underline;
+        }
+        .privacy-section {
+            margin-bottom: 48px;
+            scroll-margin-top: 100px;
+        }
+        .privacy-section h2 {
+            font-size: 1.7rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #0f2b3d;
+            border-left: 5px solid #e67e22;
+            padding-left: 20px;
+        }
+        .privacy-section h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 24px 0 12px;
+            color: #2c3e50;
+        }
+        .privacy-section p {
+            line-height: 1.7;
+            margin-bottom: 16px;
+            color: #2d3e55;
+        }
+        .privacy-section ul, .privacy-section ol {
+            margin: 12px 0 20px 28px;
+            line-height: 1.7;
+            color: #2d3e55;
+        }
+        .privacy-section li {
+            margin-bottom: 8px;
+        }
+        .data-table {
+            overflow-x: auto;
+            margin: 24px 0;
+        }
+        .data-table table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #f9fbfe;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        .data-table th, .data-table td {
+            border: 1px solid #e2e8f0;
+            padding: 14px 18px;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+        .data-table th {
+            background: #eef2fa;
+            font-weight: 700;
+        }
+        .highlight-card {
+            background: #f0f6fe;
+            border-radius: 24px;
+            padding: 24px;
+            margin: 24px 0;
+            text-align: center;
+        }
+        .cookie-box {
+            background: #ffffff;
+            border: 1px solid #e2eaf5;
+            border-radius: 24px;
+            padding: 20px;
+            margin: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .btn-outline {
+            background: transparent;
+            border: 1px solid #e67e22;
+            padding: 8px 24px;
+            border-radius: 50px;
+            color: #e67e22;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .btn-outline:hover {
+            background: #e67e22;
+            color: white;
+        }
+        .contact-card {
+            background: #fef7e8;
+            border-radius: 24px;
+            padding: 28px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        hr {
+            margin: 32px 0;
+            border: 0;
+            height: 1px;
+            background: #e4eaf2;
+        }
+
+        /* Footer */
+        .footer {
+            background: #0f1a24;
+            color: #cbd5e1;
+            padding: 48px 0 28px;
+            border-radius: 40px 40px 0 0;
+            margin-top: 20px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 18px;
+        }
+        .footer-col a {
+            color: #cbd5e1;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+        .footer-col a:hover {
+            color: #e67e22;
+        }
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #2d3a47;
+            padding-top: 28px;
+            font-size: 0.8rem;
+        }
+        @media (max-width: 780px) {
+            .privacy-container { padding: 28px 20px; }
+            .search-bar { margin: 12px 0; order: 3; width: 100%; max-width: 100%; }
+            .container { padding: 0 20px; }
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: #1e4a6e;
+            color: white;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: 0.2s;
+            z-index: 99;
+        }
+        .back-to-top:hover {
+            background: #e67e22;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="container nav-bar">
+        <div class="logo">
+            <a href="#" onclick="goToHomepage(); return false;">
+                <h1>ShopSphere <span>🌍</span></h1>
+            </a>
+        </div>
+        <div class="search-bar">
+            <form onsubmit="event.preventDefault(); alert('🔍 Search our Privacy Policy or explore ShopSphere.');">
+                <input type="text" placeholder="Search privacy topics...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+        <div class="nav-icons">
+           <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+        </div>
+    </div>
+</header>
+
+<main class="container">
+    <div class="breadcrumb">
+        <a href="#" id="homeBreadcrumb">Home</a> &nbsp;/&nbsp; 
+        <a href="#" id="termsBreadcrumb">Terms</a> &nbsp;/&nbsp; 
+        <span style="color:#e67e22; font-weight:500;">Privacy Policy</span>
+    </div>
+
+    <div class="privacy-container">
+        <div class="privacy-header">
+            <h1>Privacy Policy</h1>
+            <div class="last-updated">📅 Last updated: June 16, 2026</div>
+            <p style="margin-top: 18px; max-width: 700px; margin-left: auto; margin-right: auto;">Your trust is our priority. At ShopSphere, we are committed to protecting your personal data and being transparent about how we use it.</p>
+        </div>
+
+        <div class="privacy-badge">
+            <i class="fas fa-shield-alt" style="font-size: 2rem; color:#e67e22;"></i>
+            <div><strong>Our commitment to you:</strong> We never sell your personal information. ShopSphere complies with GDPR, CCPA, and global privacy standards.</div>
+        </div>
+
+        <div class="toc">
+            <h3><i class="fas fa-list-ul"></i> Privacy Quick Links</h3>
+            <ul>
+                <li><a href="#infoCollect">1. Information We Collect</a></li>
+                <li><a href="#usage">2. How We Use Data</a></li>
+                <li><a href="#sharing">3. Sharing & Disclosure</a></li>
+                <li><a href="#cookies">4. Cookies & Tracking</a></li>
+                <li><a href="#yourRights">5. Your Privacy Rights</a></li>
+                <li><a href="#security">6. Data Security</a></li>
+                <li><a href="#children">7. Children's Privacy</a></li>
+                <li><a href="#retention">8. Data Retention</a></li>
+                <li><a href="#international">9. International Transfers</a></li>
+                <li><a href="#policyUpdates">10. Policy Updates</a></li>
+                <li><a href="#contactPrivacy">11. Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div id="infoCollect" class="privacy-section">
+            <h2>1. Information We Collect</h2>
+            <p>ShopSphere collects information to provide, improve, and personalize your shopping experience. The categories of data we collect include:</p>
+            <div class="data-table">
+                <table>
+                    <thead><tr><th>Category</th><th>Examples</th><th>Purpose</th></tr></thead>
+                    <tbody>
+                        <tr><td>Identity Data</td><td>Name, email address, phone number, shipping address</td><td>Account creation, order fulfillment, customer support</td></tr>
+                        <tr><td>Payment Data</td><td>Card details, billing address (processed via PCI-compliant partners)</td><td>Process transactions, prevent fraud</td></tr>
+                        <tr><td>Transaction Data</td><td>Purchase history, wishlist, returns, reviews</td><td>Order management, personalized recommendations</td></tr>
+                        <tr><td>Technical Data</td><td>IP address, browser type, device IDs, cookies</td><td>Site security, analytics, performance optimization</td></tr>
+                        <tr><td>Profile Data</td><td>Preferences, feedback, survey responses</td><td>Marketing (with consent), improving services</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>We do not collect sensitive data (e.g., health, biometric, political beliefs) unless you voluntarily provide it.</p>
+        </div>
+
+        <div id="usage" class="privacy-section">
+            <h2>2. How We Use Your Information</h2>
+            <p>ShopSphere uses your data for legitimate business purposes, including:</p>
+            <ul>
+                <li><strong>Order processing & delivery:</strong> Confirm purchases, ship items, and handle returns.</li>
+                <li><strong>Customer support:</strong> Respond to inquiries, resolve disputes, and provide assistance.</li>
+                <li><strong>Personalization:</strong> Recommend products based on browsing and purchase history.</li>
+                <li><strong>Marketing communications:</strong> Send promotions, offers, and newsletters (you may opt out anytime).</li>
+                <li><strong>Legal compliance:</strong> Fraud detection, tax reporting, and responding to lawful requests.</li>
+                <li><strong>Platform improvement:</strong> Analyze trends, test features, and enhance security.</li>
+            </ul>
+        </div>
+
+        <div id="sharing" class="privacy-section">
+            <h2>3. Sharing & Disclosure of Information</h2>
+            <p>ShopSphere does not sell your personal data. We share information only in limited circumstances:</p>
+            <ul>
+                <li><strong>Service providers:</strong> Shipping carriers (USPS, FedEx), payment gateways (Stripe, PayPal), cloud hosting, and analytics (Google Analytics).</li>
+                <li><strong>Legal requirements:</strong> If required by law, court order, or to protect the rights and safety of ShopSphere or its users.</li>
+                <li><strong>Business transfers:</strong> In the event of a merger, acquisition, or bankruptcy, your data may be transferred with notice.</li>
+                <li><strong>With your consent:</strong> When you explicitly authorize sharing.</li>
+            </ul>
+            <div class="highlight-card">
+                <i class="fas fa-handshake" style="font-size: 1.5rem;"></i>
+                <p style="margin-top: 8px;"><strong>No third-party marketing:</strong> We never sell your email or personal data to advertisers.</p>
+            </div>
+        </div>
+
+        <div id="cookies" class="privacy-section">
+            <h2>4. Cookies & Similar Technologies</h2>
+            <p>ShopSphere uses cookies, local storage, and web beacons to enhance functionality and analyze traffic. Types of cookies we use:</p>
+            <ul>
+                <li><strong>Essential Cookies:</strong> Required for cart, checkout, and account security.</li>
+                <li><strong>Analytics Cookies:</strong> Google Analytics, Hotjar — help us understand user behavior.</li>
+                <li><strong>Preference Cookies:</strong> Remember language and region settings.</li>
+                <li><strong>Marketing Cookies:</strong> Used for retargeting campaigns (you can opt out).</li>
+            </ul>
+            <div class="cookie-box" id="cookieConsentBox">
+                <span><i class="fas fa-cookie-bite"></i> We value your privacy. You can manage cookie preferences.</span>
+                <button class="btn-outline" id="customizeCookiesBtn">Customize Preferences</button>
+                <button class="btn-outline" id="acceptAllCookies" style="background:#e67e22; color:white; border:none;">Accept All</button>
+            </div>
+            <p>You can also disable cookies via your browser settings, but some site features may not function properly.</p>
+        </div>
+
+        <div id="yourRights" class="privacy-section">
+            <h2>5. Your Privacy Rights</h2>
+            <p>Depending on your location (e.g., California, EU, UK, Brazil), you may have the following rights:</p>
+            <ul>
+                <li><strong>Right to Access:</strong> Request a copy of your personal data.</li>
+                <li><strong>Right to Rectification:</strong> Correct inaccurate information.</li>
+                <li><strong>Right to Erasure (Right to be Forgotten):</strong> Request deletion of your data.</li>
+                <li><strong>Right to Restrict Processing:</strong> Limit how we use your data.</li>
+                <li><strong>Right to Data Portability:</strong> Receive your data in a structured, machine-readable format.</li>
+                <li><strong>Right to Object:</strong> Opt-out of direct marketing and certain profiling.</li>
+                <li><strong>Right to Non-Discrimination:</strong> We will not discriminate for exercising your rights.</li>
+            </ul>
+            <p>To exercise any of these rights, contact our Data Protection Officer at <strong>privacy@shopsphere.com</strong>. We will respond within 30 days.</p>
+        </div>
+
+        <div id="security" class="privacy-section">
+            <h2>6. Data Security</h2>
+            <p>ShopSphere implements industry-standard security measures, including SSL encryption, firewalls, regular vulnerability scans, and access controls. However, no method of transmission over the internet is 100% secure. We encourage you to use strong passwords and enable two-factor authentication where available. In the event of a data breach, we will notify affected users and authorities as required by law.</p>
+        </div>
+
+        <div id="children" class="privacy-section">
+            <h2>7. Children's Privacy</h2>
+            <p>ShopSphere does not knowingly collect personal information from children under the age of 13. If you are a parent or guardian and believe your child has provided us with data, please contact us immediately. We will delete such information promptly.</p>
+        </div>
+
+        <div id="retention" class="privacy-section">
+            <h2>8. Data Retention</h2>
+            <p>We retain your personal data only as long as necessary to fulfill the purposes outlined in this policy, comply with legal obligations (e.g., tax records for 7 years), resolve disputes, and enforce agreements. After retention periods expire, your data will be securely deleted or anonymized.</p>
+        </div>
+
+        <div id="international" class="privacy-section">
+            <h2>9. International Data Transfers</h2>
+            <p>ShopSphere operates globally. Your data may be transferred to and processed in countries outside your residence, including the United States. We ensure appropriate safeguards (e.g., Standard Contractual Clauses) are in place to protect your data in accordance with applicable laws.</p>
+        </div>
+
+        <div id="policyUpdates" class="privacy-section">
+            <h2>10. Changes to This Privacy Policy</h2>
+            <p>We may revise this Privacy Policy from time to time. The "Last updated" date indicates the latest revision. Material changes will be notified via email, website banner, or pop-up. Your continued use of ShopSphere after changes signifies acceptance. We encourage you to review this page periodically.</p>
+        </div>
+
+        <div id="contactPrivacy" class="privacy-section">
+            <h2>11. Contact Us</h2>
+            <p>If you have questions, concerns, or wish to submit a data request, please reach out to our Privacy & Compliance Team:</p>
+            <div class="contact-card">
+                <i class="fas fa-envelope" style="font-size: 1.8rem; color:#e67e22;"></i>
+                <p style="margin: 12px 0 6px;"><strong>Email:</strong> privacy@shopsphere.com</p>
+                <p><strong>Phone (Privacy Office):</strong> +1 (888) 557-8890 ext. 42</p>
+                <p><strong>Mail:</strong> ShopSphere Privacy, 123 Sphere Avenue, Floor 8, New York, NY 10001, USA</p>
+                <p><strong>DPO contact:</strong> dpo@shopsphere.com</p>
+            </div>
+        </div>
+
+        <hr>
+        <p style="font-size: 0.85rem; text-align: center;">Your trust is our greatest asset. ShopSphere is committed to transparency, security, and giving you control over your data.</p>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col"><h4>ShopSphere</h4><p>Global marketplace connecting creators & shoppers.</p><p><i class="fas fa-map-pin"></i> New York, NY</p></div>
+            <div class="footer-col"><h4>Legal</h4><a href="#" id="privacyFooterLink">Privacy Policy</a><a href="#" id="termsFooterLink">Terms of Service</a><a href="#" id="cookieSettingsFooter">Cookie Settings</a></div>
+            <div class="footer-col"><h4>Support</h4><a href="#">Help Center</a><a href="#">Data Request</a><a href="#">Contact Support</a></div>
+        </div>
+        <div class="copyright">&copy; 2026 ShopSphere — Infinite choices, one sphere. All rights reserved.</div>
+    </div>
+</footer>
+
+<a href="#" class="back-to-top" id="backToTopBtn"><i class="fas fa-arrow-up"></i></a>
+
+<script>
+    function goToHomepage() {
+        alert("✨ Welcome to ShopSphere — Explore millions of products with trust & transparency.");
+        window.location.href = "#";
+    }
+
+    // Navigation
+    document.getElementById('homeBreadcrumb')?.addEventListener('click', (e) => { e.preventDefault(); goToHomepage(); });
+    document.getElementById('termsBreadcrumb')?.addEventListener('click', (e) => { e.preventDefault(); alert("📜 View our Terms & Conditions for complete marketplace guidelines."); });
+    document.getElementById('userPrivacyBtn')?.addEventListener('click', (e) => { e.preventDefault(); alert("🔐 Manage your privacy settings and data preferences in your account dashboard."); });
+    document.getElementById('cartPrivacyBtn')?.addEventListener('click', (e) => { e.preventDefault(); alert("🛒 Your cart is ready. Start shopping with confidence on ShopSphere."); });
+
+    // Cookie preferences simulation
+    const acceptAllBtn = document.getElementById('acceptAllCookies');
+    const customizeBtn = document.getElementById('customizeCookiesBtn');
+    if (acceptAllBtn) {
+        acceptAllBtn.addEventListener('click', () => {
+            localStorage.setItem('shopsphere_cookie_consent', 'accepted');
+            alert("✅ You've accepted all cookies. You can change preferences anytime via footer.");
+            document.getElementById('cookieConsentBox')?.remove();
+        });
+    }
+    if (customizeBtn) {
+        customizeBtn.addEventListener('click', () => {
+            alert("⚙️ Cookie Preference Center: Essential cookies always active. Manage analytics & marketing cookies in settings.");
+        });
+    }
+
+    // Footer links
+    document.getElementById('privacyFooterLink')?.addEventListener('click', (e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    document.getElementById('termsFooterLink')?.addEventListener('click', (e) => { e.preventDefault(); alert("📖 ShopSphere Terms of Service — full agreement available."); });
+    document.getElementById('cookieSettingsFooter')?.addEventListener('click', (e) => { e.preventDefault(); alert("🍪 Manage your cookie preferences anytime via browser or our settings panel."); });
+
+    // Back to top button
+    const backBtn = document.getElementById('backToTopBtn');
+    if (backBtn) {
+        backBtn.addEventListener('click', (e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+        window.addEventListener('scroll', () => {
+            backBtn.style.opacity = window.scrollY > 400 ? '1' : '0';
+            backBtn.style.visibility = window.scrollY > 400 ? 'visible' : 'hidden';
+        });
+        backBtn.style.transition = '0.2s';
+        backBtn.style.opacity = '0';
+        backBtn.style.visibility = 'hidden';
+    }
+
+    // Smooth anchor scroll
+    document.querySelectorAll('.toc a, .privacy-section a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId && targetId !== '#') {
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    const offset = 90;
+                    const pos = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                    window.scrollTo({ top: pos - offset, behavior: 'smooth' });
+                }
+            }
+        });
+    });
+
+    console.log('ShopSphere — Privacy Policy page fully loaded with data protection commitment.');
+</script>
+</body>
+</html>
